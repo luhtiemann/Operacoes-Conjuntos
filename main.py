@@ -54,16 +54,16 @@ def union(set1, set2):
       result.append(i) 
   result={i for i in result}     
 
-  print("União: conjunto 1 {",', '.join(map(str, set1)),"},",end=' ', sep="")
-  print("conjunto 2 {",', '.join(map(str, set2)),"}.",end=' ', sep="")
-  print('Resultado: {',', '.join(map(str, result)), '}',end='\n', sep="")
+  print("União: conjunto 1 {",', '.join(map(str, set1)),"},",sep="",end=' ')
+  print("conjunto 2 {",', '.join(map(str, set2)),"}.",sep="",end=' ')
+  print('Resultado: {',', '.join(map(str, result)), '}',sep="",end='\n')
 
 def cartesian_product(set1, set2):  
   result = [(x,y) for x in set1 for y in set2]
   
-  print("Produto cartesiano: conjunto 1 {",', '.join(map(str, set1)),"},",end=' ', sep="")
-  print("conjunto 2 {",', '.join(map(str, set2)),"}.",end=' ', sep="")
-  print('Resultado: {',', '.join(map(str, result)).replace("'", ""), '}',end='\n', sep="")
+  print("Produto cartesiano: conjunto 1 {",', '.join(map(str, set1)),"},",sep="",end=' ')
+  print("conjunto 2 {",', '.join(map(str, set2)),"}.",sep="",end=' ')
+  print('Resultado: {',', '.join(map(str, result)).replace("'", ""), '}',sep="",end='\n')
 
 def intersection(set1, set2):
   for i in set1:
@@ -77,9 +77,9 @@ def intersection(set1, set2):
       if i==j:
         result.append(i)
     
-  print("Interseção: conjunto 1 {",', '.join(map(str, set1)),"},",end=' ', sep="")
-  print("conjunto 2 {",', '.join(map(str, set2)),"}.",end=' ', sep="")
-  print('Resultado: {',', '.join(map(str, result)), '}',end='\n', sep="")
+  print("Intersecção: conjunto 1 {",', '.join(map(str, set1)),"},",sep="",end=' ')
+  print("conjunto 2 {",', '.join(map(str, set2)),"}.",sep="",end=' ')
+  print('Resultado: {',', '.join(map(str, result)), '}',sep="",end='\n')
 
 def difference(set1, set2):
   for i in set1:
@@ -92,9 +92,9 @@ def difference(set1, set2):
     if i not in set2:
       result.append(i)
           
-  print("Diferença: conjunto 1 {",', '.join(map(str, set1)),"},",end=' ', sep="")
-  print("conjunto 2 {",', '.join(map(str, set2)),"}.",end=' ', sep="")
-  print('Resultado: {',', '.join(map(str, result)), '}',end='\n', sep="")
+  print("Diferença: conjunto 1 {",', '.join(map(str, set1)),"},",sep="",end=' ')
+  print("conjunto 2 {",', '.join(map(str, set2)),"}.",sep="",end=' ')
+  print('Resultado: {',', '.join(map(str, result)), '}',sep="",end='\n')
 
 for line in file:
   result = []
@@ -119,6 +119,6 @@ for line in file:
       set1 = file.readline().replace(',', '').split()
       set2 = file.readline().replace(',', '').split()
       cartesian_product(set1, set2)
-      counter += 1     
+      counter += 1
 
 file.close()
